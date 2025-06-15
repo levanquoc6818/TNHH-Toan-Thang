@@ -50,7 +50,7 @@
         <div class="bg-blue-600 text-white text-sm py-2">
             <div class="container mx-auto px-4 flex justify-between items-center">
                 <div class="flex items-center space-x-6">
-                    <span class="hidden md:flex items-center"><i class="fas fa-phone mr-2"></i> 0345 590 934</span>
+                    <span class="hidden md:flex items-center"><i class="fas fa-phone mr-2"></i> +84 329 439 665</span>
                     <span class="hidden md:flex items-center"><i class="fas fa-envelope mr-2"></i> contact@thanglongdih.website</span>
                 </div>
                 <div class="flex items-center space-x-4">
@@ -263,7 +263,7 @@
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-phone mr-3 w-4 text-center"></i>
-                            <span>0345 590 934</span>
+                            <span>+84 329 439 665</span>
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-envelope mr-3 w-4 text-center"></i>
