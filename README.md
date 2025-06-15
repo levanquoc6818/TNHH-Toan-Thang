@@ -45,7 +45,6 @@
     </style>
 </head>
 <body class="bg-gray-50">
-
     <!-- Header -->
     <header class="bg-white shadow-md sticky top-0 z-50">
         <!-- Top Bar -->
