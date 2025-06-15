@@ -1,1 +1,0 @@
-console.log('THANGLONG DIH website loaded');
