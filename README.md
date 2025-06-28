@@ -1,288 +1,277 @@
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Công Ty Cổ Phần Phát Triển Nguồn Lực Thăng Long DIH</title>
-    
-    <!-- Tailwind CSS -->
+    <title>Công ty TNHH Xây Dựng Toàn Thắng</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts (Inter) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Custom styles */
         body {
             font-family: 'Inter', sans-serif;
         }
         .hero-section {
-            background-image: url('https://images.unsplash.com/photo-1504628599423-6b2f6de6f6e1?q=80&w=1920&auto=format&fit=crop');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
         }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: #3b82f6; /* blue-500 */
-            margin: 8px auto 0;
-            border-radius: 2px;
-        }
-        .order-card, .news-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .order-card:hover, .news-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            z-index: 100;
         }
     </style>
 </head>
 <body class="bg-gray-50">
+
     <!-- Header -->
     <header class="bg-white shadow-md sticky top-0 z-50">
-        <!-- Top Bar -->
-        <div class="bg-blue-600 text-white text-sm py-2">
-            <div class="container mx-auto px-4 flex justify-between items-center">
-                <div class="flex items-center space-x-6">
-                    <span class="hidden md:flex items-center"><i class="fas fa-phone mr-2"></i> +84 329 439 665</span>
-                    <span class="hidden md:flex items-center"><i class="fas fa-envelope mr-2"></i> contact@thanglongdih.website</span>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <a href="#" class="hover:text-blue-200"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="hover:text-blue-200"><i class="fab fa-youtube"></i></a>
-                    <input type="text" placeholder="Tìm kiếm..." class="hidden sm:block px-2 py-1 rounded-md text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300">
-                </div>
-            </div>
-        </div>
-
-        <!-- Main Navigation -->
-        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="#" class="flex items-center text-2xl font-bold text-blue-600">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
                 <!-- SVG Logo -->
-                <svg class="w-10 h-10 mr-3" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="25" cy="25" r="22" stroke="#3B82F6" stroke-width="3"/>
-                    <path d="M10 25C10 25 15 20 25 25C35 30 40 25 40 25" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"/>
-                    <path d="M25 10C25 10 20 15 25 25C30 35 25 40 25 40" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"/>
-                    <path d="M12.2474 13.9186C14.7352 23.3323 23.8291 35.1525 36.6022 36.3117" stroke="#fb923c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7V21H22V7L12 2Z" fill="#1D4ED8"/>
+                    <path d="M12 2L22 7V12L12 7V2Z" fill="#3B82F6"/>
+                    <path d="M20 19H4V9L12 4L20 9V19Z" fill="white"/>
+                    <path d="M9 18V14H15V18" fill="#3B82F6"/>
+                    <text x="50%" y="65%" font-family="Inter, sans-serif" font-size="6" font-weight="bold" fill="#1D4ED8" text-anchor="middle">TT</text>
                 </svg>
-                THĂNG LONG DIH
+                <span class="text-xl font-bold text-gray-800">TOÀN THẮNG</span>
             </a>
-            <div class="hidden lg:flex items-center space-x-6 font-medium text-gray-700">
-                <a href="#" class="hover:text-blue-600">Trang Chủ</a>
-                <a href="#about" class="hover:text-blue-600">Giới Thiệu</a>
-                <a href="#orders" class="hover:text-blue-600">Đơn Hàng</a>
-                <a href="#news" class="hover:text-blue-600">Tin Tức</a>
-                <a href="#contact" class="hover:text-blue-600">Liên Hệ</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-blue-600">Trang chủ</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-600">Giới thiệu</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-600">Dịch vụ</a>
+                <a href="#projects" class="text-gray-600 hover:text-blue-600">Dự án</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600">Liên hệ</a>
             </div>
-            <button id="mobile-menu-button" class="lg:hidden text-gray-700 focus:outline-none">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
         </nav>
-
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t">
-            <a href="#" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">Trang Chủ</a>
-            <a href="#about" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">Giới Thiệu</a>
-            <a href="#orders" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">Đơn Hàng</a>
-            <a href="#news" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">Tin Tức</a>
-            <a href="#contact" class="block px-4 py-3 text-gray-700 hover:bg-gray-100">Liên Hệ</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="#home" class="block py-2 px-4 text-sm text-gray-600 hover:bg-blue-50">Trang chủ</a>
+            <a href="#about" class="block py-2 px-4 text-sm text-gray-600 hover:bg-blue-50">Giới thiệu</a>
+            <a href="#services" class="block py-2 px-4 text-sm text-gray-600 hover:bg-blue-50">Dịch vụ</a>
+            <a href="#projects" class="block py-2 px-4 text-sm text-gray-600 hover:bg-blue-50">Dự án</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-gray-600 hover:bg-blue-50">Liên hệ</a>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section class="hero-section text-white h-[60vh] md:h-[80vh] flex items-center">
-            <div class="container mx-auto px-4 text-center">
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Chắp Cánh Ước Mơ Vươn Ra Thế Giới</h1>
-                <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Chúng tôi là cầu nối đáng tin cậy, mang đến cơ hội việc làm chất lượng tại các quốc gia phát triển.</p>
-                <a href="#orders" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">Xem Ngay Các Đơn Hàng</a>
+        <section id="home" class="hero-section h-[60vh] md:h-[80vh] flex items-center justify-center text-white">
+            <div class="text-center px-4">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">CÔNG TY TNHH XÂY DỰNG TOÀN THẮNG</h1>
+                <p class="text-lg md:text-2xl font-light mb-8">Kiến tạo giá trị - Xây dựng tương lai</p>
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                    Liên Hệ Tư Vấn
+                </a>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-4">
+        <!-- About Us Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Về chúng tôi" class="rounded-lg shadow-xl w-full">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Về Chúng Tôi</h2>
+                        <div class="w-24 h-1 bg-blue-600 mb-6"></div>
+                        <p class="text-gray-600 mb-4">
+                            <strong>Công ty TNHH Xây Dựng Toàn Thắng</strong>, với mã số doanh nghiệp 0800285643, tự hào là một trong những đơn vị uy tín trong lĩnh vực xây dựng tại Hải Dương và các tỉnh lân cận.
+                        </p>
+                        <p class="text-gray-600 mb-6">
+                            Với phương châm "Uy tín - Chất lượng - Tiến độ", chúng tôi cam kết mang đến cho khách hàng những công trình bền vững, thẩm mỹ và tối ưu về chi phí. Đội ngũ kỹ sư, kiến trúc sư và công nhân của chúng tôi luôn làm việc với tinh thần trách nhiệm cao nhất.
+                        </p>
+                        <div class="flex space-x-8">
+                            <div class="text-center">
+                                <i class="fas fa-hard-hat text-4xl text-blue-600"></i>
+                                <p class="mt-2 font-semibold">An Toàn Lao Động</p>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-building-shield text-4xl text-blue-600"></i>
+                                <p class="mt-2 font-semibold">Chất Lượng Vượt Trội</p>
+                            </div>
+                            <div class="text-center">
+                                <i class="fas fa-handshake text-4xl text-blue-600"></i>
+                                <p class="mt-2 font-semibold">Đối Tác Tin Cậy</p>
+                            </div>
+                        </div>
                     </div>
                     <div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Giới Thiệu Về Thăng Long DIH</h2>
-                        <div class="w-20 h-1 bg-blue-500 mb-6"></div>
-                        <p class="text-gray-600 mb-4 leading-relaxed">
-                            Với nhiều năm kinh nghiệm trong lĩnh vực cung ứng và phát triển nguồn nhân lực, công ty chúng tôi tự hào là một trong những đơn vị hàng đầu tại Việt Nam. Sứ mệnh của chúng tôi là tạo ra cơ hội việc làm ổn định, thu nhập cao và môi trường làm việc an toàn cho người lao động Việt Nam tại nước ngoài.
-                        </p>
-                        <p class="text-gray-600 mb-6 leading-relaxed">
-                            Chúng tôi cam kết đồng hành cùng người lao động từ quá trình đào tạo, hoàn thiện hồ sơ cho đến khi làm việc và trở về nước.
-                        </p>
-                        <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">Tìm Hiểu Thêm</a>
+                        <img src="https://images.unsplash.com/photo-1579958223485-a411a51136c8?q=80&w=1887&auto=format&fit=crop" alt="Đội ngũ kỹ sư Toàn Thắng" class="rounded-lg shadow-xl w-full h-auto object-cover">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Featured Orders Section -->
-        <section id="orders" class="py-16 md:py-24">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12 section-title">Đơn Hàng Nổi Bật</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Order Card 1 -->
-                    <div class="order-card bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=800&auto=format&fit=crop" alt="Chế biến thực phẩm" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <span class="text-sm bg-blue-100 text-blue-800 py-1 px-3 rounded-full">Nhật Bản</span>
-                            <h3 class="text-xl font-bold my-3 text-gray-800">Đơn hàng chế biến thực phẩm tại Tokyo</h3>
-                            <p class="text-gray-600 mb-4"><i class="fas fa-dollar-sign mr-2 text-green-500"></i>Lương: <span class="font-semibold">35-40 Triệu/Tháng</span></p>
-                            <p class="text-gray-600 mb-4"><i class="fas fa-calendar-alt mr-2 text-red-500"></i>Hạn nộp: <span class="font-semibold">30/08/2025</span></p>
-                            <a href="#" class="w-full text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300 block">Xem Chi Tiết</a>
-                        </div>
+        <!-- Services Section -->
+        <section id="services" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Dịch Vụ Của Chúng Tôi</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-12"></div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Service Item 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
+                        <i class="fas fa-home-user text-5xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Xây Dựng Dân Dụng</h3>
+                        <p class="text-gray-600">Thi công nhà ở, biệt thự, chung cư với chất lượng và tiến độ đảm bảo.</p>
                     </div>
-                    <!-- Order Card 2 -->
-                    <div class="order-card bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop" alt="Xây dựng" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <span class="text-sm bg-blue-100 text-blue-800 py-1 px-3 rounded-full">Đài Loan</span>
-                            <h3 class="text-xl font-bold my-3 text-gray-800">Đơn hàng xây dựng, giàn giáo tại Đài Bắc</h3>
-                            <p class="text-gray-600 mb-4"><i class="fas fa-dollar-sign mr-2 text-green-500"></i>Lương: <span class="font-semibold">30-35 Triệu/Tháng</span></p>
-                            <p class="text-gray-600 mb-4"><i class="fas fa-calendar-alt mr-2 text-red-500"></i>Hạn nộp: <span class="font-semibold">15/09/2025</span></p>
-                            <a href="#" class="w-full text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300 block">Xem Chi Tiết</a>
-                        </div>
+                    <!-- Service Item 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
+                        <i class="fas fa-industry text-5xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Xây Dựng Công Nghiệp</h3>
+                        <p class="text-gray-600">Xây dựng nhà xưởng, kho bãi, khu công nghiệp theo tiêu chuẩn quốc tế.</p>
                     </div>
-                    <!-- Order Card 3 -->
-                    <div class="order-card bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1562423214-45944114282c?q=80&w=800&auto=format&fit=crop" alt="Cơ khí" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <span class="text-sm bg-blue-100 text-blue-800 py-1 px-3 rounded-full">Hàn Quốc</span>
-                            <h3 class="text-xl font-bold my-3 text-gray-800">Tuyển kỹ sư cơ khí làm việc tại Seoul</h3>
-                            <p class="text-gray-600 mb-4"><i class="fas fa-dollar-sign mr-2 text-green-500"></i>Lương: <span class="font-semibold">45-55 Triệu/Tháng</span></p>
-                            <p class="text-gray-600 mb-4"><i class="fas fa-calendar-alt mr-2 text-red-500"></i>Hạn nộp: <span class="font-semibold">25/08/2025</span></p>
-                            <a href="#" class="w-full text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300 block">Xem Chi Tiết</a>
-                        </div>
+                    <!-- Service Item 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
+                        <i class="fas fa-compass-drafting text-5xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Thiết Kế Kiến Trúc</h3>
+                        <p class="text-gray-600">Cung cấp các giải pháp thiết kế sáng tạo, tối ưu công năng sử dụng.</p>
+                    </div>
+                    <!-- Service Item 4 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg transform hover:-translate-y-2 transition duration-300">
+                        <i class="fas fa-screwdriver-wrench text-5xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Sửa Chữa & Cải Tạo</h3>
+                        <p class="text-gray-600">Nâng cấp, cải tạo các công trình cũ, mang lại diện mạo mới hiện đại.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- News Section -->
-        <section id="news" class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12 section-title">Tin Tức & Sự Kiện</h2>
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">Dự Án Tiêu Biểu</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-12"></div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                     <!-- News Card 1 -->
-                     <div class="news-card bg-white rounded-lg overflow-hidden border">
-                        <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=800&auto=format&fit=crop" alt="Tin tức" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <p class="text-sm text-gray-500 mb-2">15 Tháng 6, 2025</p>
-                            <h3 class="text-xl font-bold mb-3 text-gray-800 hover:text-blue-600"><a href="#">Những điều cần biết khi đi XKLĐ Nhật Bản 2025</a></h3>
-                            <p class="text-gray-600 leading-relaxed line-clamp-3">
-                                Thị trường xuất khẩu lao động Nhật Bản luôn là điểm đến hấp dẫn. Cùng tìm hiểu những thay đổi mới nhất về chính sách và chi phí...
-                            </p>
+                    <!-- Project Item 1 -->
+                    <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop" alt="Dự án biệt thự hiện đại" class="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-6">
+                            <h3 class="text-white text-xl font-bold">Biệt Thự Hiện Đại - Ecopark</h3>
                         </div>
                     </div>
-                     <!-- News Card 2 -->
-                     <div class="news-card bg-white rounded-lg overflow-hidden border">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop" alt="Sự kiện" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                             <p class="text-sm text-gray-500 mb-2">10 Tháng 6, 2025</p>
-                            <h3 class="text-xl font-bold mb-3 text-gray-800 hover:text-blue-600"><a href="#">Công ty tổ chức lễ xuất cảnh cho đoàn bay tháng 6</a></h3>
-                            <p class="text-gray-600 leading-relaxed line-clamp-3">
-                                Buổi lễ diễn ra trong không khí ấm cúng, là lời động viên và chúc các bạn thực tập sinh lên đường may mắn, thành công...
-                            </p>
+                    <!-- Project Item 2 -->
+                    <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop" alt="Dự án nhà phố thương mại" class="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-6">
+                            <h3 class="text-white text-xl font-bold">Nhà Phố Thương Mại - Times City</h3>
                         </div>
                     </div>
-                     <!-- News Card 3 -->
-                     <div class="news-card bg-white rounded-lg overflow-hidden border">
-                        <img src="https://images.unsplash.com/photo-1516975069153-a83b9e434316?q=80&w=800&auto=format&fit=crop" alt="Cẩm nang" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <p class="text-sm text-gray-500 mb-2">05 Tháng 6, 2025</p>
-                            <h3 class="text-xl font-bold mb-3 text-gray-800 hover:text-blue-600"><a href="#">Cẩm nang học tiếng Nhật hiệu quả cho người mới bắt đầu</a></h3>
-                            <p class="text-gray-600 leading-relaxed line-clamp-3">
-                                Tiếng Nhật là chìa khóa quan trọng để hòa nhập. Bài viết này sẽ chia sẻ những phương pháp học tập hiệu quả đã được kiểm chứng...
-                            </p>
+                    <!-- Project Item 3 -->
+                    <div class="group relative overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1572095750849-d9c7cb387588?q=80&w=1964&auto=format&fit=crop" alt="Dự án nhà xưởng công nghiệp" class="w-full h-72 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-6">
+                            <h3 class="text-white text-xl font-bold">Nhà Xưởng KCN Nam Sách</h3>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         
-        <!-- Partner Section -->
-        <section class="py-12 bg-gray-100">
-            <div class="container mx-auto px-4">
-                <h2 class="text-2xl font-bold text-gray-700 text-center mb-8">Đối Tác Của Chúng Tôi</h2>
-                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-                    <img src="https://placehold.co/150x60/cccccc/999999?text=Partner+1" alt="Partner 1" class="h-12 grayscale hover:grayscale-0 transition duration-300">
-                    <img src="https://placehold.co/150x60/cccccc/999999?text=Partner+2" alt="Partner 2" class="h-12 grayscale hover:grayscale-0 transition duration-300">
-                    <img src="https://placehold.co/150x60/cccccc/999999?text=Partner+3" alt="Partner 3" class="h-12 grayscale hover:grayscale-0 transition duration-300">
-                    <img src="https://placehold.co/150x60/cccccc/999999?text=Partner+4" alt="Partner 4" class="h-12 grayscale hover:grayscale-0 transition duration-300">
-                    <img src="https://placehold.co/150x60/cccccc/999999?text=Partner+5" alt="Partner 5" class="h-12 grayscale hover:grayscale-0 transition duration-300">
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">Liên Hệ Với Chúng Tôi</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-12"></div>
+                <div class="bg-white p-8 rounded-lg shadow-lg max-w-4xl mx-auto">
+                   <div class="grid md:grid-cols-2 gap-8">
+                       <div>
+                           <h3 class="text-xl font-bold text-gray-800 mb-4">Thông tin liên hệ</h3>
+                           <p class="text-gray-600 mb-4">
+                               <strong>CÔNG TY TNHH XÂY DỰNG TOÀN THẮNG</strong>
+                           </p>
+                           <div class="flex items-start space-x-4 mb-4">
+                               <i class="fas fa-map-marker-alt text-blue-600 mt-1"></i>
+                               <p class="text-gray-600">Số nhà 150, Đường Ngô Quyền, Phường Tân Bình, Thành phố Hải Dương, Tỉnh Hải Dương, Việt Nam</p>
+                           </div>
+                           <div class="flex items-center space-x-4 mb-4">
+                               <i class="fas fa-phone-alt text-blue-600"></i>
+                               <a href="tel:+84904649333" class="text-gray-600 hover:text-blue-600">+84 904 649 333</a>
+                           </div>
+                           <div class="flex items-center space-x-4 mb-4">
+                               <i class="fas fa-envelope text-blue-600"></i>
+                               <a href="mailto:admin@thanglongdih.website" class="text-gray-600 hover:text-blue-600">admin@thanglongdih.website</a>
+                           </div>
+                           <div class="flex items-center space-x-4">
+                               <i class="fas fa-globe text-blue-600"></i>
+                               <a href="#" class="text-gray-600 hover:text-blue-600">www.thanglongdih.website</a>
+                           </div>
+                           <p class="text-gray-600 mt-4">
+                               <strong>Người đại diện:</strong> Ông Đoàn Văn Ánh
+                           </p>
+                       </div>
+                       <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Gửi yêu cầu tư vấn</h3>
+                            <form action="#" method="POST">
+                                <div class="mb-4">
+                                    <input type="text" placeholder="Họ và Tên" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                <div class="mb-4">
+                                    <input type="email" placeholder="Email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                <div class="mb-4">
+                                    <input type="tel" placeholder="Số điện thoại" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                <div class="mb-4">
+                                    <textarea placeholder="Nội dung yêu cầu" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition duration-300">
+                                    Gửi Yêu Cầu
+                                </button>
+                            </form>
+                       </div>
+                   </div>
                 </div>
             </div>
         </section>
 
     </main>
-
+    
     <!-- Footer -->
-    <footer id="contact" class="bg-gray-800 text-white pt-16 pb-8">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-                <!-- Column 1: About Company -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-10">
+            <div class="grid md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold mb-4">CÔNG TY CP PHÁT TRIỂN NGUỒN LỰC THĂNG LONG DIH</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Là đơn vị uy tín hàng đầu trong lĩnh vực xuất khẩu lao động, chúng tôi luôn nỗ lực vì tương lai của người lao động Việt Nam.
-                    </p>
-                    <div class="mt-4 flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-gray-700 hover:bg-blue-500 rounded-full flex items-center justify-center transition-colors"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="w-10 h-10 bg-gray-700 hover:bg-red-500 rounded-full flex items-center justify-center transition-colors"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="w-10 h-10 bg-gray-700 hover:bg-blue-400 rounded-full flex items-center justify-center transition-colors"><i class="fab fa-twitter"></i></a>
+                    <h4 class="text-lg font-bold mb-4">CÔNG TY TNHH XÂY DỰNG TOÀN THẮNG</h4>
+                    <p class="text-gray-400">Đối tác tin cậy cho mọi công trình. Chúng tôi kiến tạo những không gian sống và làm việc chất lượng, bền vững với thời gian.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Liên kết nhanh</h4>
+                    <ul>
+                        <li class="mb-2"><a href="#about" class="text-gray-400 hover:text-white">Giới thiệu</a></li>
+                        <li class="mb-2"><a href="#services" class="text-gray-400 hover:text-white">Dịch vụ</a></li>
+                        <li class="mb-2"><a href="#projects" class="text-gray-400 hover:text-white">Dự án</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-gray-400 hover:text-white">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Theo dõi chúng tôi</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-linkedin-in"></i></a>
                     </div>
-                </div>
-                <!-- Column 2: Quick Links -->
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Liên Kết Nhanh</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">Về chúng tôi</a></li>
-                        <li><a href="#orders" class="text-gray-400 hover:text-white transition-colors">Đơn hàng</a></li>
-                        <li><a href="#news" class="text-gray-400 hover:text-white transition-colors">Tin tức</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Chính sách bảo mật</a></li>
-                    </ul>
-                </div>
-                <!-- Column 3: Contact Info -->
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Thông Tin Liên Hệ</h3>
-                    <ul class="space-y-3 text-gray-400">
-                        <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt mt-1 mr-3 w-4 text-center"></i>
-                            <span>61c, ngõ 66, tổ 5, Phố Ngọc Thụy, P. Ngọc Thuỵ, Q. Long Biên, Hà Nội</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-phone mr-3 w-4 text-center"></i>
-                            <span>+84 329 439 665</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-envelope mr-3 w-4 text-center"></i>
-                            <span>contact@thanglongdih.website</span>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Column 4: Map -->
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Vị Trí Văn Phòng</h3>
-                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.655891392683!2d105.8643808759325!3d21.04642958731114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135a9b775e53381%3A0x35633342f2105151!2zNjZjIE5nLiA2NiBOZ-G7jWMgVGjhu6V5LCBOZ-G7jWMgVGjhu6V5LCBMb25nIEJpw6puLCBIw6AgTuG7mWksIFZp4buHdG5hbQ!5e0!3m2!1svi!2s!4v1718480983196!5m2!1svi!2s" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-md"></iframe>
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm">
-                <p>&copy; 2025 THANGLONG DIH., JSC. All Rights Reserved. </p>
+                <p>&copy; 2024 Công ty TNHH Xây Dựng Toàn Thắng. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
     
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top bg-blue-600 hover:bg-blue-700 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script>
         // JavaScript for mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -291,14 +280,34 @@
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-
-        // Close mobile menu when a link is clicked
-        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
-        for (let link of mobileMenuLinks) {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                mobileMenu.classList.add('hidden'); // Hide mobile menu on click
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
-        }
+        });
+
+        // JavaScript for scroll to top button
+        const scrollToTopButton = document.getElementById('scroll-to-top');
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopButton.style.display = "block";
+            } else {
+                scrollToTopButton.style.display = "none";
+            }
+        };
+
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
     </script>
+
 </body>
 </html>
